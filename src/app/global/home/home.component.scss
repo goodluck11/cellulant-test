@@ -1,0 +1,197 @@
+@import "~assets/variable/colors";
+
+.main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+
+  .header {
+    position: fixed;
+    top: 0;
+    height: 64px;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0 2px 2px -2px rgb(0 0 0 / 15%);
+    transition: all .2s ease-in-out;
+
+    .logo {
+      width: 280px;
+      padding-left: .8rem;
+      padding-right: .4rem;
+
+      .initial {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        padding: .5rem;
+        color: #ffffff;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: $green-color;
+      }
+
+      .form-select {
+        border: none;
+        font-weight: 700;
+
+        &:hover, &:active, &:focus {
+          border: none;
+          user-select: none;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .header-content {
+      width: calc(100%  - 280px);
+      padding: 0 3rem;
+
+      .header-content-action {
+        position: relative;
+
+        a {
+          color: $text-color;
+          font-weight: 700;
+
+          &:hover {
+            color: $text-color;
+          }
+        }
+
+        .action-item {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            height: 30px;
+            width: 1.5px;
+            background-color: #E1E3E5;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    background: #ffffff;
+    z-index: 1;
+    height: calc(100% - 64px);
+    width: 280px;
+    display: flex;
+    flex-flow: nowrap;
+    box-shadow: 0 2px 2px -2px rgb(0 0 0 / 15%);
+    transition: all .2s ease-in-out;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    overflow-y: scroll;
+
+    .menu-title {
+      text-transform: uppercase;
+      padding: .5rem 0;
+      font-weight: 600;
+      font-size: .85rem;
+      color: $grey-color;
+    }
+
+    .menu {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      color: #787878;
+
+      .menu-item, .submenu-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+
+        .menu-item-link {
+          font-size: 1rem;
+          font-weight: 700;
+          color: inherit;
+          padding: 0.6rem .5rem;
+          width: 100%;
+          display: flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          margin-right: 30px;
+          transition: color .2s ease-in-out;
+
+          .anticon, .bi, .material-icons {
+            margin-right: 1.2rem;
+          }
+
+          &.submenu-active {
+            color: $green-color;
+            border-radius: 10px;
+            background-color: #F5F5F5;
+          }
+        }
+
+        //.nested-menu .submenu-item-link {
+        //  .material-icons {
+        //    transform: rotate(90deg);
+        //  }
+        //}
+
+        .nested-menu .sub-menu .menu-item-link {
+          padding-left: 2.5rem;
+        }
+
+        .sub-menu {
+          margin-right: 10px;
+          padding-left: 1.2rem;
+        }
+      }
+
+      .submenu-item > .menu-item-link {
+        color: #787878;
+      }
+
+      .menu-item.menu-active {
+        color: $black-color;
+        .nested-menu {
+          color: $black-color;
+        }
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    width: calc(100% - 280px);
+    margin-left: 280px;
+    padding: 9rem 3rem 2rem;
+  }
+}
+
+ul li::marker {
+  color: red;
+  font-size: 1.5em;
+}

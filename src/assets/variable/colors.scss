@@ -1,0 +1,37 @@
+$green-color: #67DF8E;
+$orange-color: #ED6E49;
+$grey-color: #6D7175;
+$text-color: #282828;
+$black-color: #000000;
+
+.green {
+  color: $green-color;
+}
+
+.blue {
+  color: #4AA0EB;
+}
+
+.yellow {
+  color: #F7C654;
+}
+
+.pink {
+  color: #D43851;
+}
+
+.grey {
+  color: $grey-color;
+}
+
+.orange {
+  color: $orange-color;
+}
+
+.text-color {
+  color: $text-color;
+}
+
+.black {
+  color: $black-color !important;
+}

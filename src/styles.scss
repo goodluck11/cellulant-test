@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/variable/typography";
+@import "assets/variable/colors";
+
+html {
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-color;
+  font-family: 'Nunito Sans', sans-serif !important;
+  background-color: #f5f5f5;
+}
+
+.grey {
+  color: #6D7175;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.form-group {
+  height: 100%;
+  justify-content: flex-end;
+
+  .ant-select {
+    &:not(.ant-select-customize-input) .ant-select-selector {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+  }
+
+  .ant-select-multiple .ant-select-selection-item {
+    align-items: flex-start;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .ant-picker {
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    border: none;
+    border-radius: 5px;
+  }
+
+  .ant-picker-input {
+    flex-direction: row-reverse;
+
+    .ant-picker-suffix {
+      margin-left: 0;
+      margin-right: 10px;
+      color: rgba(0,0,0,.85);
+    }
+
+    .ant-picker-clear {
+      margin-left: 0;
+      color: rgba(0,0,0,.85);
+      margin-right: 10px;
+      left: 0;
+      right: unset;
+    }
+  }
+}
+
+/// CUSTOMIZE  ANT
+
+.ant-picker-suffix {
+  font-size: 16px;
+}
+
+.ant-picker-clear {
+  .anticon {
+    font-size: 16px;
+  }
+}
+
+.ant-switch {
+  background-color: $orange-color;
+}
+
+.ant-switch-checked {
+  background-color: $green-color;
+}
+
+.action-item {
+  .ant-select, .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+    color: $text-color;
+    font-weight: 700;
+    margin-top: 3px;
+  }
+
+  .ant-select-arrow {
+    top: 60%;
+  }
+}

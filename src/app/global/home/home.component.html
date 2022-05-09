@@ -1,0 +1,165 @@
+<div class="main">
+  <div class="header">
+    <div class="logo d-flex align-items-center">
+      <div class="initial">
+        BN
+      </div>
+      <select class="form-select">
+        <option selected>Business Name</option>
+      </select>
+    </div>
+    <div class="header-content d-flex justify-content-between align-items-center">
+      <h6 class="mb-0 fs-15 fw-700 grey">May 18, 2021 15:42</h6>
+      <div class="header-content-action d-flex justify-content-center align-items-center">
+        <div class="px-3 action-item mt-8">
+          <nz-switch [(ngModel)]="switchValue"></nz-switch>
+          <span class="ms-2 fw-600 orange">Go Live</span>
+        </div>
+        <div class="px-3 action-item">
+          <nz-select ngModel="eng" nzBorderless>
+            <nz-option nzValue="eng" nzLabel="ENG"></nz-option>
+          </nz-select>
+        </div>
+        <div class="px-3 action-item">
+          <button nz-button nzType="text" nzShape="circle">
+            <span class="material-icons">notifications</span>
+          </button>
+        </div>
+        <div class="ps-3">
+          <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+            Edward Maina
+            <i nz-icon nzType="down" class="ms-3"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item>Profile</li>
+              <li nz-menu-item>Logout</li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar d-flex flex-column">
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-item-link black" href="javascript:void(0);">
+        <span class="material-icons">speed</span>
+          <span>Get Started</span>
+        </a>
+      </li>
+    </ul>
+    <div class="menu-title mt-3">My Business</div>
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">house</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item" routerLinkActive="menu-active" [routerLinkActiveOptions]="{ exact: false }">
+        <a class="menu-item-link" routerLink="/dashboard">
+          <span class="material-icons">swap_horizontal_circle</span>
+          <span>Transactions</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="menu-item nested-menu">
+            <a class="menu-item-link submenu-item-link" href="javascript:void(0);">
+              <span class="material-icons">play_arrow</span>
+              <span>Charge</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a class="menu-item-link" routerLink="/dashboard" routerLinkActive="submenu-active">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" >
+                  <span>Payment Requests</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" href="javascript:void(0);">
+                  <span>Charge Requests</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" href="javascript:void(0);">
+                  <span>Manage Paybills & accounts</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" href="javascript:void(0);">
+                  <span>Manage Payment Methods</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="submenu-item">
+            <a class="menu-item-link" href="javascript:void(0);">
+              <span>Refund</span>
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a class="menu-item-link" href="javascript:void(0);">
+              <span>Reconcile</span>
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a class="menu-item-link" href="javascript:void(0);">
+              <span>Balance</span>
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a class="menu-item-link" href="javascript:void(0);">
+              <span>Forex</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link" routerLink="/transactions" routerLinkActive="submenu-active" [routerLinkActiveOptions]="{ exact: true }">
+          <span class="material-icons">wifi_protected_setup</span>
+          <span>Payouts</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">mark_chat_unread</span>
+          <span>Messaging</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">account_circle</span>
+          <span>Customers</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">account_circle</span>
+          <span>Onboarding</span>
+        </a>
+      </li>
+    </ul>
+    <div class="menu-title">Collect</div>
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">local_grocery_store</span>
+          <span>In-Store</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link" href="javascript:void(0);">
+          <span class="material-icons">local_grocery_store</span>
+          <span>Online</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
